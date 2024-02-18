@@ -7,6 +7,7 @@ import DashboardLayout from "./components/DashboardLayout";
 import Books from "./pages/Books";
 import EditBook from "./pages/EditBook";
 import AddBook from "./pages/AddBook";
+import EditProfile from "./pages/EditProfile";
 
 // Public Route wrapper
 const PublicRoute = ({ children }) => {
@@ -43,6 +44,7 @@ function App() {
         <Route path="/" element={<Books />} />
         <Route path="/books/add" element={<AddBook />} />
         <Route path="/books/:id" element={<EditBook />} />
+        <Route path="/profile" element={<EditProfile />} />
       </Route>
     </Routes>
   );

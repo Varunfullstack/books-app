@@ -68,6 +68,13 @@ const DashboardLayout = () => {
             open={Boolean(anchorEl)}
             onClose={handleMenuClose}
           >
+            <MenuItem
+              onClick={() => {
+                navigate("/profile");
+              }}
+            >
+              Profile
+            </MenuItem>
             <MenuItem onClick={handleLogout}>Logout</MenuItem>
           </Menu>
         </Toolbar>
