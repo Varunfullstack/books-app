@@ -4,7 +4,7 @@ import axiosInstance from "../api/axiosConfig";
 export const listBooks = async (page = 1, limit = 10) => {
   try {
     const response = await axiosInstance.get("/books", {
-      params: { page, per_page: limit },
+      params: { _page: page, _per_page: limit, _sort: "id", _order: "desc" },
     });
     return response.data;
   } catch (error) {

@@ -23,7 +23,7 @@ const BookList = () => {
 
   useEffect(() => {
     fetchBooks();
-  }, []); // Empty dependency array means this effect runs once on mount
+  }, [page]); // Empty dependency array means this effect runs once on mount
 
   const fetchBooks = async () => {
     setLoading(true);
@@ -44,7 +44,6 @@ const BookList = () => {
   };
   const handleLoadMore = () => {
     setPage((prevPage) => prevPage + 1); // Increment page
-    fetchBooks(); // Fetch next page of books
   };
 
   if (error) return <Box sx={{ m: 2 }}>Error: {error}</Box>;
