@@ -15,11 +15,12 @@
 - **Create Book**: Allows authors to add new books to the list.
 - **Edit Book**: Enables editing details of existing books.
 - **Only Author Can Add Books**: Restricts the ability to add books to users with an 'author' role.
-- **Edit Profile**: Users can update their profile information.
+- **Edit Profile**: Users can update their profile information. (From top right corner)
+- **Manage Users**: Only Authors can manage users and change their role (From top right corner)
 
-## Pending Items
+## Assumptions
 
-- **Author Access Control**: The Author should be able to grant or revoke access to specific collaborators through the React app. (Ran out of time)
+- I have allowed users to choose the role at signup so the reviewer can see all the functionalities.
 
 ## Installation
 

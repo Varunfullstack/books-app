@@ -8,6 +8,7 @@ import Books from "./pages/Books";
 import EditBook from "./pages/EditBook";
 import AddBook from "./pages/AddBook";
 import EditProfile from "./pages/EditProfile";
+import Users from "./pages/Users";
 
 // Public Route wrapper
 const PublicRoute = ({ children }) => {
@@ -45,6 +46,7 @@ function App() {
         <Route path="/books/add" element={<AddBook />} />
         <Route path="/books/:id" element={<EditBook />} />
         <Route path="/profile" element={<EditProfile />} />
+        <Route path="/users" element={<Users />} />
       </Route>
     </Routes>
   );

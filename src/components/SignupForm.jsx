@@ -1,4 +1,14 @@
-import { Box, Button, Grid, TextField, Link } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  TextField,
+  Link,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+} from "@mui/material";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -14,6 +24,7 @@ const validationSchema = Yup.object().shape({
   confirmPassword: Yup.string()
     .required("Confirm Password is Required")
     .oneOf([Yup.ref("password")], "Passwords do not match"),
+  role: Yup.string().required("Role is required"),
 });
 
 const SignUpForm = () => {
@@ -38,7 +49,9 @@ const SignUpForm = () => {
   const formik = useFormik({
     validationSchema,
     onSubmit: handleSubmit,
-    initialValues: {},
+    initialValues: {
+      role: "author",
+    },
   });
 
   return (
@@ -102,6 +115,21 @@ const SignUpForm = () => {
           formik.touched.confirmPassword && formik.errors.confirmPassword
         }
       />
+      <FormControl fullWidth margin="normal">
+        <InputLabel id="role-select-label">Role</InputLabel>
+        <Select
+          labelId="role-select-label"
+          id="role"
+          name="role"
+          value={formik.values.role}
+          label="Role"
+          onChange={formik.handleChange}
+          error={formik.touched.role && Boolean(formik.errors.role)}
+        >
+          <MenuItem value="author">Author</MenuItem>
+          <MenuItem value="collaborator">Collaborator</MenuItem>
+        </Select>
+      </FormControl>
       <Button
         type="submit"
         disabled={formik.isSubmitting}

@@ -7,8 +7,10 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import { Box, Typography } from "@mui/material";
+import useAuth from "../hooks/useAuth";
 
 const DashboardLayout = () => {
+  const { hasRole } = useAuth();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const navigate = useNavigate();
 
@@ -38,7 +40,9 @@ const DashboardLayout = () => {
           <Typography
             style={{
               flexGrow: 1,
+              cursor: "pointer",
             }}
+            onClick={() => navigate("/")}
           >
             Books App
           </Typography>
@@ -68,6 +72,17 @@ const DashboardLayout = () => {
             open={Boolean(anchorEl)}
             onClose={handleMenuClose}
           >
+            {hasRole("author") ? (
+              <MenuItem
+                onClick={() => {
+                  navigate("/users");
+                }}
+              >
+                Users
+              </MenuItem>
+            ) : (
+              <></>
+            )}
             <MenuItem
               onClick={() => {
                 navigate("/profile");
