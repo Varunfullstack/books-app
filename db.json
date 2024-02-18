@@ -1,0 +1,147 @@
+{
+  "users": [
+    {
+      "email": "sonumariya50@gmail.com",
+      "password": "$2a$10$owTtcErqddqOqzXgJV6ceON0YcRYjC7p8j72KFHPpij8gCIADaj/O",
+      "id": 1
+    },
+    {
+      "email": "varunkamani19@gmail.com",
+      "password": "$2a$10$5mgWWl92VwR5UELF9uef3.IjKI0ANjesQbAKe3Z.vwepDLo0riAKG",
+      "id": 2,
+      "role": "author",
+      "name": "Varun 1"
+    },
+    {
+      "email": "varunkamnai199@gmail.com",
+      "password": "$2a$10$0USO3rQXnQ5AyKhcz6Uj3.M8D5qF9K6OyYvz8.4lOZ7T3POdU0JCu",
+      "name": "Varun",
+      "confirmPassword": "1234@Asdfg",
+      "id": 3,
+      "role": "collaborator"
+    },
+    {
+      "email": "varun@gmail.com",
+      "password": "$2a$10$tIHHEBOg7yprwhGLLnO4rOUiYrSaokGBqb89s8HQtMS9CXGyI4QPi",
+      "name": "varun",
+      "id": 4
+    },
+    {
+      "email": "varunkamani191@gmail.com",
+      "password": "$2a$10$5l.OX292vx0Brhv1Ys9UVeYIvAoZUifcrDC/W/LMnSH6whswHz9Q6",
+      "name": "Varun",
+      "id": 5
+    },
+    {
+      "email": "var@gmail.com",
+      "password": "$2a$10$bCUSaMqWLFWVIxnYmIQYie9hbPLRFbWRP4S/Iupa1uRxtMY8IRZFK",
+      "name": "Var",
+      "id": 6
+    }
+  ],
+  "books": [
+    {
+      "name": "Alchemist",
+      "description": "aaa",
+      "sections": [
+        {
+          "id": 1011,
+          "name": "sub section",
+          "sections": [
+            {
+              "id": 10222,
+              "name": "sub sub s",
+              "sections": [
+                {
+                  "name": "aaa",
+                  "id": "0d74983f-db52-48bc-9c3b-46ff4490990b",
+                  "sections": []
+                }
+              ]
+            },
+            {
+              "name": "Hi",
+              "id": "0ca9752e-2007-4731-a6fd-d25650f70aec",
+              "sections": []
+            }
+          ]
+        },
+        {
+          "name": "Sub 1",
+          "sections": [
+            {
+              "name": "Sub 11",
+              "id": "0e6aafa5-674b-4495-992e-d48fc579332c",
+              "sections": [
+                {
+                  "name": "Sub 111",
+                  "id": "b6971965-56e0-4fca-8ef2-ddb78488d073",
+                  "sections": []
+                }
+              ]
+            },
+            {
+              "name": "Sub 12",
+              "id": "9a486d93-606d-4752-a785-d9365710c993",
+              "sections": []
+            }
+          ],
+          "id": "bc95fed9-ef51-4944-a6f1-2d654705fe94"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "New book",
+      "description": "New book description",
+      "sections": [
+        {
+          "name": "New Section",
+          "sections": [
+            {
+              "name": "New Sub Section",
+              "id": "0c68376f-b7e3-48d0-bc07-7db60b289d28",
+              "sections": []
+            }
+          ],
+          "id": "7f41a806-1acb-40e9-9826-31407d1078f4"
+        },
+        {
+          "name": "New Section 1",
+          "sections": [],
+          "id": "03baf233-4cc4-4c29-a1a0-c3213f50b987"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "fifth",
+      "description": "desc",
+      "sections": [
+        {
+          "name": "",
+          "sections": [
+            {
+              "name": "",
+              "id": "ac7330c3-3499-4b35-a464-e51fe975acd3",
+              "sections": [
+                {
+                  "name": "",
+                  "id": "b4268daf-d48b-47c6-b48f-7b7685f8341e",
+                  "sections": []
+                },
+                {
+                  "name": "",
+                  "id": "e873e59f-74bb-4ee2-8058-e92b8fd425f8",
+                  "sections": []
+                }
+              ]
+            }
+          ],
+          "id": "266a349c-43cd-4c2a-b8d0-a0fe9b9c464c"
+        }
+      ],
+      "id": 5
+    }
+  ]
+}
