@@ -29,14 +29,7 @@ const SignUpForm = () => {
       navigate("/");
     } catch (e) {
       console.log("error", e);
-      toast.error(e.response.data, {
-        position: "top-right",
-        autoClose: 3000,
-        pauseOnFocusLoss: true,
-        pauseOnHover: true,
-        newestOnTop: true,
-        theme: "colored",
-      });
+      toast.error(e.response.data);
     } finally {
       formik.setSubmitting(false);
     }

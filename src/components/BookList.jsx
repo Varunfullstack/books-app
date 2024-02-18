@@ -6,6 +6,8 @@ import {
   Divider,
   Button,
   Link,
+  Box,
+  CircularProgress,
 } from "@mui/material";
 import { listBooks } from "../services/bookService";
 import { Link as RouterLink } from "react-router-dom";
@@ -36,58 +38,66 @@ const BookList = () => {
     } catch (error) {
       console.error("Error fetching books:", error);
       setError("Failed to load books.");
-      setLoading(false);
+    } finally {
+      setLoading(false); // Ensure loading is set to false after operation
     }
   };
-
   const handleLoadMore = () => {
     setPage((prevPage) => prevPage + 1); // Increment page
     fetchBooks(); // Fetch next page of books
   };
 
-  if (error) return <div>Error: {error}</div>;
+  if (error) return <Box sx={{ m: 2 }}>Error: {error}</Box>;
 
   return (
-    <>
-      {hasRole("author") ? (
-        <Button component={RouterLink} to="/books/add">
+    <Box sx={{ m: 2 }}>
+      {hasRole("author") && (
+        <Button
+          component={RouterLink}
+          to="/books/add"
+          variant="contained"
+          sx={{ mb: 2 }}
+        >
           Add Book
         </Button>
-      ) : (
-        <></>
       )}
       <List component="nav" aria-label="book list">
         {books.map((book, index) => (
-          <React.Fragment key={index}>
+          <React.Fragment key={book.id}>
             <Link
               component={RouterLink}
               to={`/books/${book.id}`}
-              variant="body2"
+              underline="hover"
             >
-              <ListItem>
+              <ListItem button>
                 <ListItemText
                   primary={book.name}
                   secondary={book.description}
                 />
               </ListItem>
             </Link>
-
-            {/* Add a divider between list items except after the last item */}
             {index < books.length - 1 && <Divider />}
           </React.Fragment>
         ))}
       </List>
-      {loading && <div>Loading...</div>}
-      {hasMore && !loading && (
-        <Button
-          onClick={handleLoadMore}
-          variant="outlined"
-          style={{ marginTop: "20px" }}
-        >
-          Load More
-        </Button>
+      {loading ? (
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
+          <CircularProgress />
+        </Box>
+      ) : (
+        hasMore && (
+          <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
+            <Button
+              onClick={handleLoadMore}
+              variant="outlined"
+              style={{ marginTop: "20px" }}
+            >
+              Load More
+            </Button>
+          </Box>
+        )
       )}
-    </>
+    </Box>
   );
 };
 
